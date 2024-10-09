@@ -1,27 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:analyzeflutter/roll_dice.dart'
 
-Alignment? startAlignment;
-Alignment? endAlignment;
+Alignment startAlignment = Alignment.topLeft;
+Alignment endALignment = Alignment.bottomRight;
+var currentDiceImg = 'assets/images/dice-1.png';
+
+// Alignment? startAlignment;
+// Alignment? endAlignment;
 
 class GradientWidgets extends StatelessWidget {
-  final startAlignment = Alignment.topLeft;
-  final endAlignment = Alignment.bottomRight;
-
   const GradientWidgets({super.key});
+
+  rollDice() {
+    currentDiceImg = 'assets/images/dice-2.png';
+    print("Rolling Dice...");
+  }
+
   @override
   Widget build(context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: const [
-          Color.fromARGB(95, 6, 234, 135),
-          Color.fromARGB(155, 4, 8, 249)
-        ], begin: startAlignment, end: endAlignment),
-      ),
+          gradient: LinearGradient(colors: const [
+        Color.fromARGB(255, 63, 1, 249),
+        Color.fromARGB(255, 244, 54, 209)
+      ], begin: startAlignment, end: endALignment)),
       child: const Center(
-        child: Text(
-          "hello world",
-          style: TextStyle(color: Colors.white, fontSize: 40),
-        ),
+        child: RollDice(),
+        // styledtext('Mabuhay'),
       ),
     );
   }
