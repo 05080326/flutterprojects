@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:analyzeflutter/styledtext.dart';
 
 class GradientWidgets extends StatelessWidget {
   const GradientWidgets({super.key})
@@ -11,10 +12,7 @@ class GradientWidgets extends StatelessWidget {
         Color.fromARGB(255, 244, 54, 209)
       ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
       child: const Center(
-        child: Text(
-          "hello world",
-          style: TextStyle(fontSize: 40, color: Colors.blue),
-        ),
+        child: StyledText,
       ),
     );
   }
